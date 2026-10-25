@@ -79,13 +79,14 @@ class Store:
     def _activity_event(self, guild, key):
         return self.db.execute("INSERT OR IGNORE INTO activity_events VALUES (?,?)", (guild, key)).rowcount == 1
 
-    def voice_message(self, guild: int, user: int, message_id: int, seconds: int, xp_per_minute: int):
+    def voice_message(self, guild: int, user: int, message_id: int, seconds: int, xp_per_minute: int, multiplier: float = 1):
         with self.db:
             if not self._activity_event(guild, f"voice-message:{message_id}"):
                 return False
             self.db.execute("INSERT OR IGNORE INTO activity (guild,user) VALUES (?,?)", (guild, user))
             before = self.db.execute("SELECT voice_message_seconds FROM activity WHERE guild=? AND user=?", (guild, user)).fetchone()[0]
             xp = ((before + seconds) * xp_per_minute // 60) - (before * xp_per_minute // 60)
+            xp = int(xp * multiplier)
             self.db.execute("UPDATE activity SET voice_message_seconds=voice_message_seconds+?, voice_messages=voice_messages+1, xp=xp+? WHERE guild=? AND user=?", (seconds, xp, guild, user))
         return True
 

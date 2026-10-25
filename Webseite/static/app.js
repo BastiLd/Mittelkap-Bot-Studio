@@ -29,7 +29,7 @@ async function api(path, options={}) {
 const post=(path,value)=>api(path,{method:'POST',body:JSON.stringify(value)});
 function toast(text,error=false){clearTimeout(toastTimer);const el=$('#toast');el.textContent=text;el.classList.toggle('error',error);el.hidden=false;toastTimer=setTimeout(()=>el.hidden=true,error?14000:8000);}
 function currentBot(){return data.bots.find(x=>x.bot===bot);}
-function guild(){return currentBot()?.guilds?.find(g=>String(g.id)===guildId) || currentBot()?.guilds?.[0];}
+function guild(){return currentBot()?.guilds?.find(g=>String(g.id)===guildId);}
 function settings(){return {features:[],channels:{},links:{},messages:{},...(guild()?.settings || {})};}
 function pickBot(next){bot=next;render();}
 function buttonBusy(button,value){if(button)button.disabled=value;}
@@ -80,8 +80,8 @@ function render(){
  $$('[data-bot]').forEach(b=>b.classList.toggle('selected',b.dataset.bot===bot));
  const guilds=[...new Map(data.bots.flatMap(b=>b.guilds||[]).map(g=>[String(g.id),g])).values()];
  $('#guild-select').innerHTML=guilds.map(g=>`<option value="${esc(g.id)}" ${String(g.id)===guildId?'selected':''}>${esc(g.name)}</option>`).join('')||'<option>Kein Server verbunden</option>';
- if(!guild()&&!['overview','access'].includes(page)){$('#content').innerHTML=empty('Der Bot ist noch nicht verbunden.','Starte auf deinem Server die Profile Jarvis und Ultron im Bot-Manager. Am Windows-PC verwendest du START_ALLE.cmd.');return;}
- const result=({overview:overviewV3,channels:channels,sources:sources,commands:commands,embeds:()=>renderEmbedsV3(settings()),settings:configuration,logs:logs,members:communityMembers,moderation:moderation,access:renderAccessV3})[page]();
+ if(!guild()&&!['overview','access'].includes(page)){$('#content').innerHTML=empty('Dieser Bot ist auf dem gewählten Server nicht verfügbar.','Wähle den anderen Bot oder füge diesen Bot dem Server hinzu. Prüfe außerdem den Online-Status im Bot-Manager. Die Einstellungen eines anderen Servers werden hier niemals ersatzweise angezeigt.');decoratePage();return;}
+ const result=({overview:overviewV3,channels:channels,sources:sources,commands:commands,embeds:()=>renderEmbedsV3(settings()),settings:configuration,logs:logs,members:communityMembers,moderation:moderation,access:renderAccessV3,xp:xpPage})[page]();
  Promise.resolve(result).then(()=>decoratePage()).catch(e=>toast(e.message,true));
 }
 function channels(){

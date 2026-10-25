@@ -34,6 +34,8 @@ class DiscordBot(discord.Client):
         intents.typing = False
         super().__init__(intents=intents, allowed_mentions=discord.AllowedMentions.none())
         self.service = service
+        from .xp_admin import XPAdmin
+        self.xp = XPAdmin(service.store)
         self.session = None
         self.notifications = None
         self.voice_clock = None
@@ -80,6 +82,9 @@ class DiscordBot(discord.Client):
         await super().close()
 
     async def on_ready(self):
+        from .guild_setup import initialize_guild
+        for guild in self.guilds:
+            initialize_guild(self.service, guild)
         log.info("%s ist verbunden (%d Server).", self.service.config.base["name"], len(self.guilds))
         self.voice_clock = time.monotonic()
         if self.member_sync_task is None:
@@ -87,9 +92,21 @@ class DiscordBot(discord.Client):
         if self.history_task is None:
             self.history_task = asyncio.create_task(self.restore_history(), name="Nachrichtenindex")
 
-    async def refresh_directory(self):
+    async def on_guild_join(self, guild):
+        from .guild_setup import initialize_guild
+        initialize_guild(self.service, guild)
+        await self.refresh_directory([guild])
+        if self.dashboard_bridge and self.dashboard_bridge.bus:
+            self.dashboard_bridge.publish()
+
+    async def on_guild_remove(self, guild):
+        self.member_sync.pop(guild.id, None)
+        if self.dashboard_bridge and self.dashboard_bridge.bus:
+            self.dashboard_bridge.publish()
+
+    async def refresh_directory(self, guilds=None):
         """A bounded initial refresh, never an HTTP crawl on every dashboard heartbeat."""
-        for guild in self.guilds:
+        for guild in (self.guilds if guilds is None else guilds):
             state = self.member_sync[guild.id] = {"status":"loading", "cached":len(guild.members), "expected":guild.member_count, "bans_status":"loading"}
             try:
                 if not guild.chunked:
@@ -139,12 +156,12 @@ class DiscordBot(discord.Client):
         is_command = parsed is not None or message.content.startswith(("!", "/"))
         if "activity" in c["features"] and not is_command:
             voice_attachments = [a for a in getattr(message, "attachments", []) if a.is_voice_message()]
-            self.service.store.message(message.guild.id, message.author.id, time.time(), c["text_xp"],
+            self.service.store.message(message.guild.id, message.author.id, time.time(), int(c["text_xp"] * self.xp.multiplier(message.guild.id, message.author)),
                                        c["text_cooldown_seconds"], not voice_attachments and len(message.content.strip()) >= c["minimum_message_length"],
                                        getattr(message, "id", None))
             durations = [a.duration for a in voice_attachments if isinstance(a.duration, (int, float)) and math.isfinite(a.duration) and 0 < a.duration < 2**31]
             if durations:
-                self.service.store.voice_message(message.guild.id, message.author.id, message.id, int(sum(durations)), c.get("voice_message_xp_per_minute", 10))
+                self.service.store.voice_message(message.guild.id, message.author.id, message.id, int(sum(durations)), c.get("voice_message_xp_per_minute", 10), self.xp.multiplier(message.guild.id, message.author))
         if parsed:
             await self.dispatch_command(message, parsed)
         if "activity" in c["features"]:
@@ -732,7 +749,7 @@ class DiscordBot(discord.Client):
                 for member in members:
                     before = self.service.store.stats(guild.id, member.id)["voice_seconds"]
                     xp = ((before + elapsed) // 60 - before // 60) * c["voice_xp_per_minute"]
-                    self.service.store.voice(guild.id, member.id, elapsed, xp)
+                    self.service.store.voice(guild.id, member.id, elapsed, int(xp * self.xp.multiplier(guild.id, member)))
                     await self.sync_roles(member, c)
         birthday_channel = await self.resolve_channel(guild, int(c["channels"]["birthdays"] or 0))
         if isinstance(birthday_channel, (discord.TextChannel, discord.Thread)):

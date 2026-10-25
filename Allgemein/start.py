@@ -76,6 +76,7 @@ def environments(root, original, mode="all"):
         if component == "Dashboard":
             env.update(DASHBOARD_HOST=original.get("DASHBOARD_HOST", "0.0.0.0"),
                        DASHBOARD_PORT=str(port), DASHBOARD_PUBLIC_URL=original["DASHBOARD_PUBLIC_URL"].strip())
+            env['DASHBOARD_ADDITIONAL_URLS'] = original.get('DASHBOARD_ADDITIONAL_URLS', '')
             if original.get("DASHBOARD_SETUP_KEY"):
                 env["DASHBOARD_SETUP_KEY"] = original["DASHBOARD_SETUP_KEY"]
         else:

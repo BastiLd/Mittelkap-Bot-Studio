@@ -151,6 +151,7 @@ class DashboardBridge:
                                "permissions":str(getattr(getattr(r,"permissions",None),"value",0)), "position":getattr(r,"position",0)} for r in guild.roles if not r.is_default()],
                            "members": member_rows, "moderation_history": history,
                            "member_sync": {**getattr(self.client,"member_sync",{}).get(guild.id, {"status":"cached"}), "cached":len(guild.members),"expected":guild.member_count},
+                           "xp_admin": self.client.xp.snapshot(guild.id) if self.bot == "jarvis" and hasattr(self.client, "xp") else {},
                            "settings": settings, "stats": stats, "events": events, "moderation": moderators, "leaders": leaders,
                            "index_count": service.store.db.execute('SELECT COUNT(*) FROM message_index WHERE guild=?', (guild.id,)).fetchone()[0],
                            "scans": [dict(r) for r in service.store.db.execute('SELECT * FROM history_scans WHERE guild=? ORDER BY updated DESC LIMIT 100', (guild.id,))],
@@ -188,6 +189,9 @@ class DashboardBridge:
             raise ValueError("Basti muss Mitglied dieses Servers sein, um ihn zu verwalten.") from None
         payload = action["payload"]
         kind = action["kind"]
+        if kind == "xp":
+            from .xp_admin import execute_xp
+            return await execute_xp(self, action, account, guild)
         if kind == "settings":
             from .settings_schema import apply_settings
             from .notifications import resolve_source_account

@@ -21,6 +21,7 @@ PERMISSION_CATALOG = [
     ("edit.channels", "Ausgabekanäle ändern", "Bearbeiten"),
     ("edit.links", "Profillinks ändern", "Bearbeiten"),
     ("edit.sources", "Inhaltsquellen und Stream-Verzögerung ändern", "Bearbeiten"),
+    ("manage.xp", "XP vergeben und zeitlich begrenzte Booster verwalten", "Ausführen"),
     ("edit.activity", "Aktivität und XP einstellen", "Bearbeiten"),
     ("edit.birthdays", "Geburtstagszeit und Zeitzone einstellen", "Bearbeiten"),
     ("edit.commands", "Befehle und Sichtbarkeit bearbeiten", "Bearbeiten"),
@@ -171,6 +172,8 @@ def authorize_action(user, kind, payload):
                 raise ValueError("Diese Einstellung kann hier nicht geändert werden.")
             else:
                 require(user, SETTING_PERMISSIONS[key])
+    elif kind == "xp":
+        require(user, "manage.xp")
     elif kind == "moderation":
         command = payload.get("command", payload.get("action"))
         if command not in {"ban", "unban", "timeout", "kick", "untimeout", "reinvite"}:
@@ -384,16 +387,18 @@ def filter_snapshots(snapshots, user):
                 for key in ("index_count", "scans"):
                     if key in source:
                         guild[key] = copy.deepcopy(source[key])
+            if has(user, "manage.xp"):
+                guild["xp_admin"] = copy.deepcopy(source.get("xp_admin", {}))
             moderates = any(has(user, permission) for permission in MODERATION_PERMISSIONS)
             if has(user, "view.logs") or moderates:
                 guild["moderation_history"] = copy.deepcopy(source.get("moderation_history", []))
-            if has(user, "view.members") or moderates:
+            if has(user, "view.members") or has(user, "manage.xp") or moderates:
                 member_fields = {"id", "name", "username", "display_name", "role_ids", "admin", "bot", "protected", "owner", "timed_out_until"}
                 guild["members"] = [{key: copy.deepcopy(value) for key, value in member.items() if key in member_fields}
                                     for member in source.get("members", [])]
                 if "member_sync" in source:
                     guild["member_sync"] = copy.deepcopy(source["member_sync"])
-            if has(user, "view.members") or has(user, "edit.roles") or has(user, "view.settings") or moderates:
+            if has(user, "manage.xp") or has(user, "view.members") or has(user, "edit.roles") or has(user, "view.settings") or moderates:
                 guild["roles"] = copy.deepcopy(source.get("roles", []))
             if readable or has(user, "send.messages") or has(user, "moderate.reinvite"):
                 guild["channels"] = copy.deepcopy(source.get("channels", []))

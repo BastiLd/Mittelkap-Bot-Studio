@@ -246,7 +246,7 @@ async def enqueue(request):
     payload, key = data.get("payload", {}), data.get("request_key", "")
     if bot not in {"jarvis", "ultron"} or not guild.isdecimal() or not isinstance(payload, dict):
         raise ValueError("Bot und Server prüfen.")
-    if kind not in {"settings", "sync", "scan", "moderation", "send_embed"}:
+    if kind not in {"settings", "sync", "scan", "moderation", "send_embed", "xp"}:
         raise ValueError("Unbekannte Funktion.")
     if not re.fullmatch(r"[A-Za-z0-9_-]{16,100}", key):
         raise ValueError("Anfragekennung fehlt.")
@@ -258,7 +258,7 @@ async def enqueue(request):
         raise ValueError("Dieser Server ist nicht verfügbar.")
     if kind == "settings" and not isinstance(payload.get("patch"), dict):
         raise ValueError("Einstellungen fehlen.")
-    if kind in {"moderation", "send_embed"} and payload.get("confirm") is not True:
+    if kind in {"moderation", "send_embed", "xp"} and payload.get("confirm") is not True:
         raise ValueError("Bitte die Aktion zuerst prüfen und bestätigen.")
     user = current_user(request)
     authorize_action(user, kind, payload)

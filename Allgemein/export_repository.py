@@ -265,6 +265,11 @@ def public_plan(root=ROOT):
             plan[target] = sanitized_catalog(path)
         else:
             plan[target] = path.read_bytes()
+    # WebHafen must expose only the static site, never Python or private files.
+    for name, content in list(plan.items()):
+        if name.startswith("Webseite/static/"):
+            plan["Webseite/public/" + name[len("Webseite/"):]] = content
+    plan["Webseite/public/index.html"] = plan["Webseite/static/index.html"]
     deploy = root / ("deployment" if (root / "deployment").is_dir() else "Allgemein")
     for leaf in ("start.py", "requirements.txt", "build_packages.py", "export_repository.py"):
         path = deploy / leaf

@@ -53,3 +53,12 @@ Basti mit Discord-ID **965593518745731152** bleibt vor Bann, Kick und Timeout ge
 - Protokolle behalten belegte Quellen- und Ankündigungsverweise über Neustarts hinweg. Rückscan: standardmäßig 50 passende eigene Nachrichten je Kategorie/Befehl und Ziel; alternativ 100, eigene Anzahl, alle oder keine.
 - Livestream-Ankündigungen können ab Erkennung verzögert werden. Der Bot aktualisiert verfügbare Titel/Thumbnails beim fälligen Abruf und verwirft beendete Streams. Anbieterzugänge bleiben gesondert erforderlich.
 
+## Erweiterung: Hilfe, XP und mehrere Server
+
+- Jede Seite besitzt eine ausführliche deutsche Gesamterklärung. Einzelne Felder, Quellen, Wartezeiten und Abschnitte haben eigene anklickbare i-Erklärungen; auch die Bot-Auswahl und ihr Geltungsbereich werden erklärt.
+- **XP & Events** gehört zu Jarvis. Das gesonderte Recht `manage.xp` erlaubt Hinzufügen, Abziehen und Setzen für einzelne Mitglieder, mehrere Rollen oder alle menschlichen Mitglieder. Vor der Ausführung wird die Auswahl bestätigt. Der Bot prüft das vollständige Mitgliederverzeichnis; die Änderung und ihr Verlauf werden atomar gespeichert und nicht doppelt gebucht.
+- Zeitlich begrenzte Booster können sofort oder geplant starten. Sie gelten für Mitglieder, Rollen oder den Server, bleiben nach Neustarts erhalten und enden automatisch. Bei Überschneidungen gilt der höchste passende Faktor. Manuelle oder schon verdiente XP werden nicht multipliziert. Abziehen endet bei null; bestehende Levelrollen werden nicht automatisch entfernt.
+- Neu verbundene Discord-Server erscheinen in der Auswahl. Ihre Ziele, Quellen, Links, Verwaltungsrollen und eigenen Vorlagen beginnen ohne fremde Serverzuordnungen. Es gibt bewusst keine automatische Kanalzuweisung. Ein fehlender Bot führt nicht zum stillen Wechsel auf einen anderen Server.
+- WebHafen kann den Branch `main` des öffentlichen Repositorys verwenden. Als Website-Ordner ausschließlich **`Webseite/public`** auswählen; die Dateiauswahl leer lassen. Dort liegen nur die fertigen öffentlichen Website-Dateien. `/api/` wird weiterhin an das private Python-Backend geleitet.
+- Website-Updates und Bot-Updates sind getrennt: WebHafen aktualisiert die Oberfläche. Python-Änderungen müssen zusätzlich in den beiden Bot-Manager-Profilen aus Git übernommen und die Dienste danach gestartet werden. Konten, Tokens und Datenbanken gehören nicht zum Website-Import.
+

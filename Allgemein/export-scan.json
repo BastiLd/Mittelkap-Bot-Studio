@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "files_checked": 141,
+  "files_checked": 197,
   "private_files_read": false,
   "scope": "Allowlist; bereinigte Konfiguration; Pfad- und Textmusterprüfung. Kein Vergleich mit privaten Zugangsdaten.",
   "blocked_paths": [],
@@ -46,6 +46,10 @@
     {
       "path": "Ultron/botapp/settings_schema.py",
       "line": 7
+    },
+    {
+      "path": "Webseite/public/static/app.js",
+      "line": 130
     },
     {
       "path": "Webseite/server.py",

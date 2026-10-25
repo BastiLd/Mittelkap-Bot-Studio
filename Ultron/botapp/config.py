@@ -121,4 +121,7 @@ class Config:
             raise ValueError("Unbekannte Funktion in features.")
 
     def guild(self, guild_id: int, overrides: dict | None = None) -> dict:
-        return merge(merge(self.base, self.base.get("guilds", {}).get(str(guild_id), {})), overrides or {})
+        base = self.base
+        if overrides and overrides.get("_isolated_server"):
+            base = {**base, "embed_templates": {}, "command_settings": {}}
+        return merge(merge(base, base.get("guilds", {}).get(str(guild_id), {})), overrides or {})
