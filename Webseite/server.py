@@ -111,7 +111,8 @@ def logged_in(request, identity=OWNER_ACCOUNT_ID):
         bus.db.execute("DELETE FROM dashboard_sessions WHERE expires<?", (time.time(),))
         bus.db.execute("INSERT INTO dashboard_sessions(id,csrf,expires,user_id,user_version) VALUES (?,?,?,?,?)", (hashlib.sha256(token.encode()).hexdigest(), csrf, time.time()+SESSION_SECONDS, user["id"], user["auth_version"]))
     response = web.json_response({"authenticated": True, "csrf": csrf, "user": public_user(user)})
-    response.set_cookie(COOKIE, token, httponly=True, secure=request.app['secure'], samesite="Strict", max_age=SESSION_SECONDS, path="/")
+    # Origin was checked by guard; do not trust arbitrary forwarded headers.
+    response.set_cookie(COOKIE, token, httponly=True, secure=request.headers.get('Origin', '').startswith('https://'), samesite="Strict", max_age=SESSION_SECONDS, path="/")
     return response
 
 
@@ -309,7 +310,7 @@ async def process_control(app):
             stop_file.unlink(missing_ok=True)
 
 
-def create_app(path=None, port=8765, public_url=None, setup_key=None):
+def create_app(path=None, port=8765, public_url=None, setup_key=None, additional_urls=None):
     app = web.Application(middlewares=[guard], client_max_size=256*1024)
     app["bus"], app["port"] = ControlBus(path), port
     public_url = public_url or os.environ.get('DASHBOARD_PUBLIC_URL', f'http://127.0.0.1:{port}')
@@ -322,6 +323,15 @@ def create_app(path=None, port=8765, public_url=None, setup_key=None):
     if origin.hostname in {'127.0.0.1','localhost'}:
         app['hosts'].update({f'127.0.0.1:{port}',f'localhost:{port}'})
         app['origins'].update({'http://'+h for h in app['hosts']})
+    additional_urls = additional_urls if additional_urls is not None else os.environ.get('DASHBOARD_ADDITIONAL_URLS', '')
+    for value in additional_urls.split(','):
+        if not value.strip():
+            continue
+        extra = urlsplit(value.strip())
+        if extra.scheme not in {'http', 'https'} or not extra.hostname or '*' in extra.netloc or extra.path not in {'', '/'} or extra.query or extra.fragment or extra.username or extra.password:
+            raise ValueError('DASHBOARD_ADDITIONAL_URLS braucht vollständige Basisadressen ohne Pfad, durch Komma getrennt.')
+        app['hosts'].add(extra.netloc)
+        app['origins'].add(f'{extra.scheme}://{extra.netloc}')
     app['setup_key'] = setup_key if setup_key is not None else os.environ.get('DASHBOARD_SETUP_KEY','')
     app.router.add_get("/", index)
     app.router.add_get("/api/auth", auth_info)

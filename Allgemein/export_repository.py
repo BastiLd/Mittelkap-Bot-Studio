@@ -62,7 +62,7 @@ Alternativ startet `python start.py --services all` alle drei Dienste in einem P
 
 Die mitgelieferten Bot-Konfigurationen haben leere Links, Quellen, Rollen und Kanalziele. Diese nach dem Start über `/einstellungen` beziehungsweise die Website einrichten. Discord benötigt die Intents **Server Members** und **Message Content** sowie die jeweils erforderlichen Kanal-/Moderationsrechte.
 
-`DASHBOARD_PUBLIC_URL` muss exakt zur Browseradresse passen. Das Backend hört standardmäßig auf Port 8765; ein Reverse-Proxy erhält Host/Origin und leitet `/api/` unverändert weiter. Für öffentlichen Zugriff HTTPS verwenden. Beim ersten Einrichten wird ein eigener zufälliger `DASHBOARD_SETUP_KEY` benötigt; anschließend im Browser das Passwort für das Inhaberkonto **basti** festlegen. Teammitglieder bekommen getrennte Konten und Rechte.
+`DASHBOARD_PUBLIC_URL` muss exakt zur Browseradresse passen. Weitere gezielt erlaubte Basisadressen können durch Komma getrennt in `DASHBOARD_ADDITIONAL_URLS` stehen; Host und Origin werden daraus freigegeben. HTTPS-Anmeldungen erhalten Secure-Cookies, vorhandene LAN-Adressen bleiben nutzbar. Das Backend hört standardmäßig auf Port 8765; ein Reverse-Proxy erhält Host/Origin und leitet `/api/` unverändert weiter. Für öffentlichen Zugriff HTTPS verwenden. Beim ersten Einrichten wird ein eigener zufälliger `DASHBOARD_SETUP_KEY` benötigt; anschließend im Browser das Passwort für das Inhaberkonto **basti** festlegen. Teammitglieder bekommen getrennte Konten und Rechte.
 
 **Projektbindung:** Die bestehende Schutzregel für Bastis Discord-ID `965593518745731152` ist bewusst erhalten. Die ID ist kein Token. Dieses Projekt ist auf diesen Inhaber zugeschnitten; für einen unabhängigen Fork müssen Identitäts-/Schutzregeln bewusst geprüft werden. Der Bot kann Discords Rollenreihenfolge nicht umgehen.
 
@@ -96,6 +96,8 @@ JARVIS_DISCORD_TOKEN=
 ULTRON_DISCORD_TOKEN=
 # Exakte Browseradresse; hinter einem öffentlichen Proxy zum Beispiel https://bots.example.com
 DASHBOARD_PUBLIC_URL=http://localhost:8765
+# Optional: weitere exakte Basisadressen, durch Komma getrennt
+DASHBOARD_ADDITIONAL_URLS=
 DASHBOARD_HOST=0.0.0.0
 DASHBOARD_PORT=8765
 # Für BEIDE Profile derselbe absolute private Pfad. Beispiel für Linux:
