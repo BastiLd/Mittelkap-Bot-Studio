@@ -1,0 +1,1587 @@
+{
+  "version": 1,
+  "designs": [
+    {
+      "id": "terminal",
+      "label": "Konsole",
+      "group": "Technisch",
+      "tone": "Grün",
+      "note": "Die ruhige Systemkonsole mit Scanlinien und klaren Daten.",
+      "style": {
+        "design_id": "terminal",
+        "preset": "terminal",
+        "background": "#07120f",
+        "accent": "#7ce7b3",
+        "radius": 18,
+        "depth": 1,
+        "font": "consolas",
+        "shadow_x": 6,
+        "shadow_y": 7,
+        "shadow_blur": 4,
+        "shadow_color": "#000000",
+        "shadow_opacity": 28
+      }
+    },
+    {
+      "id": "layered",
+      "label": "Ebenen",
+      "group": "Räumlich",
+      "tone": "Blau",
+      "note": "Versetzte Flächen mit sichtbarer Tiefe und blauem Akzent.",
+      "style": {
+        "design_id": "layered",
+        "preset": "layered",
+        "background": "#0b1020",
+        "accent": "#829bff",
+        "radius": 36,
+        "depth": 3,
+        "font": "bahnschrift",
+        "shadow_x": 9,
+        "shadow_y": 11,
+        "shadow_blur": 7,
+        "shadow_color": "#000000",
+        "shadow_opacity": 34
+      }
+    },
+    {
+      "id": "mint-classic",
+      "label": "Minzrahmen",
+      "group": "Minimal",
+      "tone": "Grün",
+      "note": "Ein großzügiger, klarer Rahmen mit feinen Kreisbögen.",
+      "style": {
+        "design_id": "mint-classic",
+        "preset": "classic",
+        "background": "#101827",
+        "accent": "#5dd7b7",
+        "radius": 32,
+        "depth": 1,
+        "font": "segoe",
+        "shadow_x": 12,
+        "shadow_y": 15,
+        "shadow_blur": 10,
+        "shadow_color": "#000000",
+        "shadow_opacity": 40
+      }
+    },
+    {
+      "id": "paper-editorial",
+      "label": "Papier & Tinte",
+      "group": "Hell",
+      "tone": "Blau",
+      "note": "Helle Magazinseite mit einem eigenständigen Profilbereich.",
+      "style": {
+        "design_id": "paper-editorial",
+        "preset": "editorial",
+        "background": "#eae9e4",
+        "accent": "#385dbe",
+        "radius": 28,
+        "depth": 1,
+        "font": "bahnschrift",
+        "shadow_x": 15,
+        "shadow_y": 7,
+        "shadow_blur": 13,
+        "shadow_color": "#000000",
+        "shadow_opacity": 46
+      }
+    },
+    {
+      "id": "blueprint",
+      "label": "Systembauplan",
+      "group": "Technisch",
+      "tone": "Blau",
+      "note": "Konstruktionsraster, Koordinaten und technische Linien.",
+      "style": {
+        "design_id": "blueprint",
+        "preset": "blueprint",
+        "background": "#101f38",
+        "accent": "#65b9ef",
+        "radius": 12,
+        "depth": 2,
+        "font": "consolas",
+        "shadow_x": 6,
+        "shadow_y": 11,
+        "shadow_blur": 16,
+        "shadow_color": "#000000",
+        "shadow_opacity": 28
+      }
+    },
+    {
+      "id": "orchid-focus",
+      "label": "Orchideenlicht",
+      "group": "Räumlich",
+      "tone": "Violett",
+      "note": "Großes Profilbild und sanft geschichtete Lichtbögen.",
+      "style": {
+        "design_id": "orchid-focus",
+        "preset": "spotlight",
+        "background": "#17142b",
+        "accent": "#cc97ed",
+        "radius": 44,
+        "depth": 2,
+        "font": "segoe",
+        "shadow_x": 9,
+        "shadow_y": 15,
+        "shadow_blur": 4,
+        "shadow_color": "#000000",
+        "shadow_opacity": 34
+      }
+    },
+    {
+      "id": "gold-ticket",
+      "label": "Goldenes Ticket",
+      "group": "Festlich",
+      "tone": "Gold",
+      "note": "Ein Community-Pass mit getrennter Profilfläche und Perforation.",
+      "style": {
+        "design_id": "gold-ticket",
+        "preset": "ticket",
+        "background": "#231b12",
+        "accent": "#edbd78",
+        "radius": 18,
+        "depth": 2,
+        "font": "bahnschrift",
+        "shadow_x": 12,
+        "shadow_y": 7,
+        "shadow_blur": 7,
+        "shadow_color": "#000000",
+        "shadow_opacity": 40
+      }
+    },
+    {
+      "id": "amber-console",
+      "label": "Bernsteinkonsole",
+      "group": "Technisch",
+      "tone": "Gold",
+      "note": "Warmes Phosphorlicht, kompakte Ecken und dunkle Konsole.",
+      "style": {
+        "design_id": "amber-console",
+        "preset": "terminal",
+        "background": "#18130a",
+        "accent": "#edb95d",
+        "radius": 12,
+        "depth": 2,
+        "font": "consolas",
+        "shadow_x": 15,
+        "shadow_y": 11,
+        "shadow_blur": 10,
+        "shadow_color": "#000000",
+        "shadow_opacity": 46
+      }
+    },
+    {
+      "id": "ice-console",
+      "label": "Eiskonsole",
+      "group": "Technisch",
+      "tone": "Blau",
+      "note": "Kühles Eisblau mit präzisen, fast kantigen Linien.",
+      "style": {
+        "design_id": "ice-console",
+        "preset": "terminal",
+        "background": "#0d1821",
+        "accent": "#81d6e8",
+        "radius": 6,
+        "depth": 1,
+        "font": "consolas",
+        "shadow_x": 6,
+        "shadow_y": 15,
+        "shadow_blur": 13,
+        "shadow_color": "#000000",
+        "shadow_opacity": 28
+      }
+    },
+    {
+      "id": "ruby-console",
+      "label": "Rubin-Protokoll",
+      "group": "Technisch",
+      "tone": "Rot",
+      "note": "Rote Statusakzente auf einer tiefdunklen Protokollfläche.",
+      "style": {
+        "design_id": "ruby-console",
+        "preset": "terminal",
+        "background": "#200f15",
+        "accent": "#ef8294",
+        "radius": 16,
+        "depth": 3,
+        "font": "consolas",
+        "shadow_x": 9,
+        "shadow_y": 7,
+        "shadow_blur": 16,
+        "shadow_color": "#000000",
+        "shadow_opacity": 34
+      }
+    },
+    {
+      "id": "emerald-stack",
+      "label": "Smaragdebenen",
+      "group": "Räumlich",
+      "tone": "Grün",
+      "note": "Vier sichtbare Schichten und ein frischer Smaragdton.",
+      "style": {
+        "design_id": "emerald-stack",
+        "preset": "layered",
+        "background": "#0b201a",
+        "accent": "#66ceaa",
+        "radius": 32,
+        "depth": 4,
+        "font": "segoe",
+        "shadow_x": 12,
+        "shadow_y": 11,
+        "shadow_blur": 4,
+        "shadow_color": "#000000",
+        "shadow_opacity": 40
+      }
+    },
+    {
+      "id": "coral-stack",
+      "label": "Korallenschichten",
+      "group": "Räumlich",
+      "tone": "Rot",
+      "note": "Weiche Ecken und warme, gegeneinander versetzte Flächen.",
+      "style": {
+        "design_id": "coral-stack",
+        "preset": "layered",
+        "background": "#23151a",
+        "accent": "#f29c8d",
+        "radius": 48,
+        "depth": 3,
+        "font": "bahnschrift",
+        "shadow_x": 15,
+        "shadow_y": 15,
+        "shadow_blur": 7,
+        "shadow_color": "#000000",
+        "shadow_opacity": 46
+      }
+    },
+    {
+      "id": "violet-stack",
+      "label": "Violett gestapelt",
+      "group": "Räumlich",
+      "tone": "Violett",
+      "note": "Fünf Schichten, breite Typografie und sanftes Violett.",
+      "style": {
+        "design_id": "violet-stack",
+        "preset": "layered",
+        "background": "#1c1530",
+        "accent": "#b49bed",
+        "radius": 24,
+        "depth": 5,
+        "font": "bahnschrift",
+        "shadow_x": 6,
+        "shadow_y": 7,
+        "shadow_blur": 10,
+        "shadow_color": "#000000",
+        "shadow_opacity": 28
+      }
+    },
+    {
+      "id": "mono-classic",
+      "label": "Graphit",
+      "group": "Minimal",
+      "tone": "Neutral",
+      "note": "Kontrastreicher, flacher Rahmen ohne Schatten.",
+      "style": {
+        "design_id": "mono-classic",
+        "preset": "classic",
+        "background": "#1b1f25",
+        "accent": "#bdc6d4",
+        "radius": 8,
+        "depth": 0,
+        "font": "arial",
+        "shadow_x": 9,
+        "shadow_y": 11,
+        "shadow_blur": 13,
+        "shadow_color": "#000000",
+        "shadow_opacity": 34
+      }
+    },
+    {
+      "id": "sienna-classic",
+      "label": "Kupferlinie",
+      "group": "Minimal",
+      "tone": "Gold",
+      "note": "Große Rundungen, ruhiger Aufbau und warme Kupferdetails.",
+      "style": {
+        "design_id": "sienna-classic",
+        "preset": "classic",
+        "background": "#211a18",
+        "accent": "#dca379",
+        "radius": 56,
+        "depth": 2,
+        "font": "segoe",
+        "shadow_x": 12,
+        "shadow_y": 15,
+        "shadow_blur": 16,
+        "shadow_color": "#000000",
+        "shadow_opacity": 40
+      }
+    },
+    {
+      "id": "cream-editorial",
+      "label": "Vanillemagazin",
+      "group": "Hell",
+      "tone": "Gold",
+      "note": "Warme Papierfläche mit kontrastreichem goldbraunem Profilfeld.",
+      "style": {
+        "design_id": "cream-editorial",
+        "preset": "editorial",
+        "background": "#f0e9d9",
+        "accent": "#996b2f",
+        "radius": 36,
+        "depth": 2,
+        "font": "segoe",
+        "shadow_x": 15,
+        "shadow_y": 7,
+        "shadow_blur": 4,
+        "shadow_color": "#000000",
+        "shadow_opacity": 46
+      }
+    },
+    {
+      "id": "rose-editorial",
+      "label": "Rosenpapier",
+      "group": "Hell",
+      "tone": "Rot",
+      "note": "Helles Rosé und klare redaktionelle Typografie.",
+      "style": {
+        "design_id": "rose-editorial",
+        "preset": "editorial",
+        "background": "#f2e4e8",
+        "accent": "#a44166",
+        "radius": 22,
+        "depth": 1,
+        "font": "arial",
+        "shadow_x": 6,
+        "shadow_y": 11,
+        "shadow_blur": 7,
+        "shadow_color": "#000000",
+        "shadow_opacity": 28
+      }
+    },
+    {
+      "id": "sage-editorial",
+      "label": "Salbeiseite",
+      "group": "Hell",
+      "tone": "Grün",
+      "note": "Zurückhaltendes Salbeigrün mit heller Profilspalte.",
+      "style": {
+        "design_id": "sage-editorial",
+        "preset": "editorial",
+        "background": "#e5ebe4",
+        "accent": "#376b57",
+        "radius": 14,
+        "depth": 1,
+        "font": "segoe",
+        "shadow_x": 9,
+        "shadow_y": 15,
+        "shadow_blur": 10,
+        "shadow_color": "#000000",
+        "shadow_opacity": 34
+      }
+    },
+    {
+      "id": "mono-blueprint",
+      "label": "Präzisionsraster",
+      "group": "Technisch",
+      "tone": "Neutral",
+      "note": "Kantiger, schattenloser Bauplan mit neutralen Linien.",
+      "style": {
+        "design_id": "mono-blueprint",
+        "preset": "blueprint",
+        "background": "#151b20",
+        "accent": "#b3c4d1",
+        "radius": 0,
+        "depth": 0,
+        "font": "consolas",
+        "shadow_x": 12,
+        "shadow_y": 7,
+        "shadow_blur": 13,
+        "shadow_color": "#000000",
+        "shadow_opacity": 40
+      }
+    },
+    {
+      "id": "aqua-blueprint",
+      "label": "Aqua-Netz",
+      "group": "Technisch",
+      "tone": "Grün",
+      "note": "Ein lebendiges Aquaraster mit feiner Tiefe.",
+      "style": {
+        "design_id": "aqua-blueprint",
+        "preset": "blueprint",
+        "background": "#0a2326",
+        "accent": "#66c8c1",
+        "radius": 18,
+        "depth": 2,
+        "font": "consolas",
+        "shadow_x": 15,
+        "shadow_y": 11,
+        "shadow_blur": 16,
+        "shadow_color": "#000000",
+        "shadow_opacity": 46
+      }
+    },
+    {
+      "id": "sunrise-focus",
+      "label": "Sonnenaufgang",
+      "group": "Festlich",
+      "tone": "Gold",
+      "note": "Ein warmer Lichtbogen hebt das Profil groß hervor.",
+      "style": {
+        "design_id": "sunrise-focus",
+        "preset": "spotlight",
+        "background": "#251c20",
+        "accent": "#f0b775",
+        "radius": 58,
+        "depth": 3,
+        "font": "bahnschrift",
+        "shadow_x": 6,
+        "shadow_y": 15,
+        "shadow_blur": 4,
+        "shadow_color": "#000000",
+        "shadow_opacity": 28
+      }
+    },
+    {
+      "id": "arctic-focus",
+      "label": "Polarlicht",
+      "group": "Räumlich",
+      "tone": "Blau",
+      "note": "Eisblaue Bögen und großzügige, luftige Textflächen.",
+      "style": {
+        "design_id": "arctic-focus",
+        "preset": "spotlight",
+        "background": "#11202b",
+        "accent": "#8bcbd9",
+        "radius": 32,
+        "depth": 2,
+        "font": "segoe",
+        "shadow_x": 9,
+        "shadow_y": 7,
+        "shadow_blur": 7,
+        "shadow_color": "#000000",
+        "shadow_opacity": 34
+      }
+    },
+    {
+      "id": "festival-ticket",
+      "label": "Festivalpass",
+      "group": "Festlich",
+      "tone": "Violett",
+      "note": "Ein festlicher Pass mit violettem Profilfeld und starkem Kontrast.",
+      "style": {
+        "design_id": "festival-ticket",
+        "preset": "ticket",
+        "background": "#21172d",
+        "accent": "#d1a4ec",
+        "radius": 28,
+        "depth": 3,
+        "font": "bahnschrift",
+        "shadow_x": 12,
+        "shadow_y": 11,
+        "shadow_blur": 10,
+        "shadow_color": "#000000",
+        "shadow_opacity": 40
+      }
+    },
+    {
+      "id": "sea-ticket",
+      "label": "Hafenkarte",
+      "group": "Minimal",
+      "tone": "Blau",
+      "note": "Klares Ticketlayout in maritimen Farben mit feinen Linien.",
+      "style": {
+        "design_id": "sea-ticket",
+        "preset": "ticket",
+        "background": "#12252b",
+        "accent": "#83c4ce",
+        "radius": 10,
+        "depth": 1,
+        "font": "arial",
+        "shadow_x": 15,
+        "shadow_y": 15,
+        "shadow_blur": 13,
+        "shadow_color": "#000000",
+        "shadow_opacity": 46
+      }
+    }
+  ],
+  "categories": {
+    "default": {
+      "label": "Allgemeine Antwort",
+      "group": "Antworten",
+      "template": {
+        "title": "{title}",
+        "description": "{description}",
+        "color": "#829bff",
+        "author": "{bot} · Allgemeine Antwort",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "✦ Anfrage abgeschlossen",
+        "description": "Deine Anfrage wurde bearbeitet.\n\nMit **/hilfe** findest du Befehle, Beispiele und die nächsten Schritte.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "welcome": {
+      "label": "Willkommen",
+      "group": "Community",
+      "template": {
+        "title": "👋 Willkommen, {name}!",
+        "description": "Schön, dass du Teil von **{server}** bist.\n\n🧭 **Dein Start in der Community**\nEntdecke die Kanäle und lerne die Community kennen.\nMit **/hilfe** findest du alle Möglichkeiten.",
+        "color": "#57c99d",
+        "author": "{bot} · Willkommen",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": true
+      },
+      "sample": {
+        "title": "👋 Willkommen, {name}!",
+        "description": "Schön, dass du Teil von **{server}** bist.\n\n🧭 **Dein Start in der Community**\nLies die Serverregeln, stelle dich kurz vor und entdecke die Kanäle.\nMit **/hilfe** findest du alle Möglichkeiten.",
+        "fields": [
+          {
+            "name": "👥 Mitglieder",
+            "value": "128",
+            "inline": true
+          },
+          {
+            "name": "📅 Beitritt",
+            "value": "Heute um 12:00",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "farewell": {
+      "label": "Abschied",
+      "group": "Community",
+      "template": {
+        "title": "🚪 Auf Wiedersehen, {name}.",
+        "description": "{name} hat **{server}** verlassen.\n\nDie Verbindung endet. Wir wünschen dir alles Gute.",
+        "color": "#e47d8c",
+        "author": "{bot} · Abschied",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": true
+      },
+      "sample": {
+        "title": "🚪 Auf Wiedersehen, {name}.",
+        "description": "Mira hat **MittelKings Universe** verlassen.\n\nDie Verbindung endet. Wir wünschen dir alles Gute.",
+        "fields": [
+          {
+            "name": "⏳ Dabei gewesen",
+            "value": "87 Tage",
+            "inline": true
+          },
+          {
+            "name": "👥 Verbleibende Mitglieder",
+            "value": "127",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "birthday": {
+      "label": "Geburtstagsgruß",
+      "group": "Community",
+      "template": {
+        "title": "🎂 Alles Gute, {name}!",
+        "description": "Wir wünschen dir einen wunderbaren Geburtstag, **{name}**!\nSchön, dass du Teil von **{server}** bist. 🎉",
+        "color": "#ecb15f",
+        "author": "{bot} · Geburtstagsgruß",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": true
+      },
+      "sample": {
+        "title": "🎂 Alles Gute, {name}!",
+        "description": "Heute feiern wir **Mira**!\n\nWir wünschen dir einen wunderbaren Tag und viele schöne Momente mit deiner Community. 🎉",
+        "fields": [
+          {
+            "name": "🎁 Dein Tag",
+            "value": "25. Oktober",
+            "inline": true
+          },
+          {
+            "name": "💬 Mitfeiern",
+            "value": "Hinterlasse einen lieben Geburtstagsgruß.",
+            "inline": false
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "message_edit": {
+      "label": "Nachricht bearbeitet",
+      "group": "Protokolle",
+      "template": {
+        "title": "✏️ Nachricht bearbeitet",
+        "description": "{description}",
+        "color": "#65b4ec",
+        "author": "{bot} · Nachricht bearbeitet",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "✏️ Nachricht bearbeitet",
+        "description": "**Wer:** Mira\n**Wo:** #allgemein\n**Wann:** heute um 12:03\n\nDie ursprüngliche Nachricht wurde geändert.",
+        "fields": [
+          {
+            "name": "− Vorher",
+            "value": "Wer spielt heute um 19 Uhr mit?",
+            "inline": false
+          },
+          {
+            "name": "+ Nachher",
+            "value": "Wer spielt heute um 20 Uhr mit?",
+            "inline": false
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "message_delete": {
+      "label": "Nachricht gelöscht",
+      "group": "Protokolle",
+      "template": {
+        "title": "🗑️ Nachricht gelöscht",
+        "description": "{description}",
+        "color": "#f3b35d",
+        "author": "{bot} · Nachricht gelöscht",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🗑️ Nachricht gelöscht",
+        "description": "**Autor:** Mira\n**Kanal:** #allgemein\n**Zeitpunkt:** heute um 12:04\n\nDie Nachricht ist nicht mehr in Discord abrufbar. Ein Verweis führt zum ursprünglichen Kanal.",
+        "fields": [
+          {
+            "name": "📝 Gespeicherter Inhalt",
+            "value": "Wer spielt heute Abend mit?",
+            "inline": false
+          },
+          {
+            "name": "ℹ️ Verantwortlich",
+            "value": "Von Discord nicht eindeutig übermittelt.",
+            "inline": false
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "logs": {
+      "label": "Serverprotokoll",
+      "group": "Protokolle",
+      "template": {
+        "title": "{title}",
+        "description": "{description}",
+        "color": "#829bff",
+        "author": "{bot} · Serverprotokoll",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "📋 Serverereignis",
+        "description": "**Mitglied:** Mira\n**Änderung:** Rolle ergänzt\n**Ausgeführt von:** Beispielmoderator\n**Zeitpunkt:** heute um 12:05\n**Grund:** Neue Community-Rolle vergeben.",
+        "fields": [
+          {
+            "name": "➕ Hinzugefügt",
+            "value": "Community",
+            "inline": true
+          },
+          {
+            "name": "📍 Bereich",
+            "value": "Mitgliederverwaltung",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "moderation": {
+      "label": "Moderationsprotokoll",
+      "group": "Protokolle",
+      "template": {
+        "title": "{title}",
+        "description": "{description}",
+        "color": "#a18aee",
+        "author": "{bot} · Moderationsprotokoll",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🛡️ Moderationsmaßnahme",
+        "description": "**Betroffen:** Beispielmitglied\n**Maßnahme:** 10 Minuten stummschalten\n**Ausgeführt von:** Beispielmoderator\n**Grund:** Wiederholter Spam im allgemeinen Chat.",
+        "fields": [
+          {
+            "name": "🕒 Beginn",
+            "value": "Heute um 12:10",
+            "inline": true
+          },
+          {
+            "name": "⌛ Ende",
+            "value": "Heute um 12:20",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "notify_youtube": {
+      "label": "YouTube-Video",
+      "group": "Inhalte",
+      "template": {
+        "title": "{title}",
+        "description": "{description}",
+        "color": "#ed6f78",
+        "author": "{bot} · YouTube-Video",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "▶️ Neues YouTube-Video",
+        "description": "**Mittelkap** hat ein neues Video veröffentlicht.\n\nEin neuer Anfang auf unserem Community-Server – komm mit auf die Tour!\n\n[Auf YouTube ansehen](https://www.youtube.com/@beispielcreator)",
+        "fields": [
+          {
+            "name": "🎬 Creator",
+            "value": "Mittelkap",
+            "inline": true
+          },
+          {
+            "name": "📅 Veröffentlicht",
+            "value": "Heute um 12:00",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": "video"
+      }
+    },
+    "notify_youtube_live": {
+      "label": "YouTube-Livestream",
+      "group": "Inhalte",
+      "template": {
+        "title": "{title}",
+        "description": "{description}",
+        "color": "#ed6f78",
+        "author": "{bot} · YouTube-Livestream",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔴 Jetzt live auf YouTube",
+        "description": "**Mittelkap** ist live: Community-Abend mit euch!\n\n[Zum Livestream](https://www.youtube.com/@beispielcreator/live)",
+        "fields": [
+          {
+            "name": "🎮 Thema",
+            "value": "Gemeinsam spielen",
+            "inline": true
+          },
+          {
+            "name": "⏱️ Meldung verzögert",
+            "value": "5 Minuten für das Vorschaubild",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": "live"
+      }
+    },
+    "notify_twitch": {
+      "label": "Twitch-Livestream",
+      "group": "Inhalte",
+      "template": {
+        "title": "{title}",
+        "description": "{description}",
+        "color": "#b79aee",
+        "author": "{bot} · Twitch-Livestream",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🟣 Jetzt live auf Twitch",
+        "description": "**beispielcreator** ist live.\n\nHeute: Community-Runde und entspannter Chat.\n\n[Auf Twitch einschalten](https://www.twitch.tv/beispielcreator)",
+        "fields": [
+          {
+            "name": "🎮 Kategorie",
+            "value": "Community-Abend",
+            "inline": true
+          },
+          {
+            "name": "📡 Status",
+            "value": "Live",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": "live"
+      }
+    },
+    "notify_tiktok": {
+      "label": "TikTok-Video",
+      "group": "Inhalte",
+      "template": {
+        "title": "{title}",
+        "description": "{description}",
+        "color": "#66cdd0",
+        "author": "{bot} · TikTok-Video",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🎵 Neuer TikTok-Clip",
+        "description": "Ein neuer Moment von **beispielcreator** ist online.\n\nUnser lustigster Spielmoment der Woche.\n\n[Clip öffnen](https://www.tiktok.com/@beispielcreator)",
+        "fields": [
+          {
+            "name": "👤 Creator",
+            "value": "beispielcreator",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": "video"
+      }
+    },
+    "rank": {
+      "label": "Rangkarte",
+      "group": "Community",
+      "template": {
+        "title": "📊 Aktivität von {name}",
+        "description": "{description}",
+        "color": "#65b4ec",
+        "author": "{bot} · Rangkarte",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "📊 Aktivität von {name}",
+        "description": "Dein Einsatz in **{server}** im Überblick.\n\nNoch **240 XP** bis zum nächsten Level.",
+        "fields": [
+          {
+            "name": "🏆 Level",
+            "value": "12",
+            "inline": true
+          },
+          {
+            "name": "✨ Erfahrung",
+            "value": "4.260 XP",
+            "inline": true
+          },
+          {
+            "name": "📈 Rang",
+            "value": "7 von 128",
+            "inline": true
+          },
+          {
+            "name": "💬 Textnachrichten",
+            "value": "214",
+            "inline": true
+          },
+          {
+            "name": "🎙️ Sprachzeit",
+            "value": "8 Std. 35 Min.",
+            "inline": true
+          },
+          {
+            "name": "📅 Dabei seit",
+            "value": "87 Tagen",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": "rank"
+      }
+    },
+    "help": {
+      "label": "Hilfe",
+      "group": "Antworten",
+      "template": {
+        "title": "🧭 Deine Möglichkeiten",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Hilfe",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🧭 Deine Möglichkeiten",
+        "description": "**So startest du**\nWähle einen Slash-Befehl in Discord. Die Beschreibung zeigt dir, wofür er gedacht ist.\n\n**Beispiele**\n`/rang` zeigt deine Aktivität.\n`/geburtstag` verwaltet Tag und Monat.\n`/youtube` öffnet das hinterlegte Profil.",
+        "fields": [
+          {
+            "name": "⚙️ Für die Verwaltung",
+            "value": "`/einstellungen` öffnet Kanäle, Quellen und weitere Optionen.",
+            "inline": false
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "settings": {
+      "label": "Einstellungen",
+      "group": "Antworten",
+      "template": {
+        "title": "⚙️ Servereinstellungen",
+        "description": "{description}",
+        "color": "#9d8aff",
+        "author": "{bot} · Einstellungen",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "⚙️ Servereinstellungen",
+        "description": "Deine Einstellungen werden für **MittelKings Universe** gespeichert.\n\nWähle einen Bereich. Jede Option zeigt ihren Zweck und den aktuell eingestellten Wert.",
+        "fields": [
+          {
+            "name": "📌 Zielkanäle",
+            "value": "Willkommen, Logs und Inhalte",
+            "inline": false
+          },
+          {
+            "name": "🎂 Geburtstage",
+            "value": "00:00 Uhr · Europe/Vienna",
+            "inline": false
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "ping": {
+      "label": "Befehl: Status",
+      "group": "Antworten",
+      "template": {
+        "title": "🟢 Systemstatus",
+        "description": "{description}",
+        "color": "#57c99d",
+        "author": "{bot} · Befehl: Status",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🟢 Systemstatus",
+        "description": "**Jarvis ist erreichbar.**\n\nDie Verbindung zu Discord besteht. Alle aktivierten Aufgaben werden regelmäßig ausgeführt.",
+        "fields": [
+          {
+            "name": "📡 Antwortzeit",
+            "value": "42 ms",
+            "inline": true
+          },
+          {
+            "name": "⚙️ Aufgaben",
+            "value": "Willkommen · Level · Inhalte",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "setup": {
+      "label": "Befehl: Einstellungen",
+      "group": "Antworten",
+      "template": {
+        "title": "⚙️ Einstellungen verwalten",
+        "description": "{description}",
+        "color": "#9d8aff",
+        "author": "{bot} · Befehl: Einstellungen",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "⚙️ Einstellungen verwalten",
+        "description": "Wähle den Bereich, den du anpassen möchtest.\n\n**Kanäle** legen das Ziel fest. **Inhalte** verwalten Profile und Ankündigungen. **Sichtbarkeit** bestimmt, wer Antworten lesen kann.",
+        "fields": [
+          {
+            "name": "🔒 Zugriff",
+            "value": "Admins und freigegebene Moderatoren",
+            "inline": false
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "link": {
+      "label": "Befehl: Profillink ändern",
+      "group": "Antworten",
+      "template": {
+        "title": "🔗 Profillinks verwalten",
+        "description": "{description}",
+        "color": "#65b4ec",
+        "author": "{bot} · Befehl: Profillink ändern",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 Profillinks verwalten",
+        "description": "Der YouTube-Link wurde gespeichert.\n\n**Neues Ziel:** https://www.youtube.com/@beispielcreator\nMit `/youtube` können Mitglieder das Profil öffnen.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "quelle": {
+      "label": "Befehl: Inhaltsquelle",
+      "group": "Antworten",
+      "template": {
+        "title": "📡 Inhaltsquellen verwalten",
+        "description": "{description}",
+        "color": "#65b4ec",
+        "author": "{bot} · Befehl: Inhaltsquelle",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": true,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "📡 Inhaltsquellen verwalten",
+        "description": "**YouTube · beispielcreator** ist als Quelle eingerichtet.\n\nNeue Videos werden im ausgewählten Video-Kanal angekündigt. Bereits bekannte Inhalte werden nicht erneut gesendet.",
+        "fields": [
+          {
+            "name": "📍 Ziel",
+            "value": "#videos",
+            "inline": true
+          },
+          {
+            "name": "⏱️ Stream-Verzögerung",
+            "value": "5 Minuten",
+            "inline": true
+          }
+        ],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "rollen": {
+      "label": "Befehl: Stufenrolle",
+      "group": "Antworten",
+      "template": {
+        "title": "🏅 Stufenrollen verwalten",
+        "description": "{description}",
+        "color": "#ecb15f",
+        "author": "{bot} · Befehl: Stufenrolle",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🏅 Stufenrollen verwalten",
+        "description": "Ab **Level 10** erhält ein Mitglied die Rolle **Aktives Mitglied**.\n\nDie Zuordnung wurde gespeichert. Die Bot-Rolle muss oberhalb der Belohnungsrolle stehen.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "ban": {
+      "label": "Befehl: Bannen",
+      "group": "Moderation",
+      "template": {
+        "title": "🛡️ Bannverwaltung",
+        "description": "{description}",
+        "color": "#e47d8c",
+        "author": "{bot} · Befehl: Bannen",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🛡️ Bannverwaltung",
+        "description": "**Beispielmitglied** wurde vom Server gesperrt.\n\n**Grund:** Wiederholte schwere Regelverstöße.\n**Verantwortlich:** Beispielmoderator.\nDie Maßnahme wurde im Moderationsprotokoll erfasst.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "unban": {
+      "label": "Befehl: Entbannen",
+      "group": "Moderation",
+      "template": {
+        "title": "🔓 Entbannung verwalten",
+        "description": "{description}",
+        "color": "#57c99d",
+        "author": "{bot} · Befehl: Entbannen",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔓 Entbannung verwalten",
+        "description": "Die Serversperre für **Beispielmitglied** wurde aufgehoben.\n\n**Grund:** Gemeinsame Klärung abgeschlossen.\nEin erneuter Beitritt ist mit einer gültigen Einladung möglich.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "timeout": {
+      "label": "Befehl: Stummschalten",
+      "group": "Moderation",
+      "template": {
+        "title": "⏳ Stummschaltung verwalten",
+        "description": "{description}",
+        "color": "#ecb15f",
+        "author": "{bot} · Befehl: Stummschalten",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "⏳ Stummschaltung verwalten",
+        "description": "**Beispielmitglied** wurde für **10 Minuten** stummgeschaltet.\n\n**Grund:** Wiederholter Spam.\n**Ende:** Heute um 12:20.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "congratulate": {
+      "label": "Befehl: Persönlicher Glückwunsch",
+      "group": "Community",
+      "template": {
+        "title": "🎉 Ein persönlicher Glückwunsch",
+        "description": "{description}",
+        "color": "#ecb15f",
+        "author": "{bot} · Befehl: Persönlicher Glückwunsch",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🎉 Ein persönlicher Glückwunsch",
+        "description": "Dein Geburtstagsgruß für **Mira** wurde im Geburtstagskanal veröffentlicht.\n\n„Alles Gute und einen großartigen Tag!“",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "youtube": {
+      "label": "Profillink: YouTube",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 YouTube",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: YouTube",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 YouTube von Mittelkap",
+        "description": "**Videos und Community-Projekte**\n\n[YouTube öffnen](https://www.youtube.com/@beispielcreator)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "twitch": {
+      "label": "Profillink: Twitch",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 Twitch",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: Twitch",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 Twitch von Mittelkap",
+        "description": "**Livestreams und gemeinsame Abende**\n\n[Twitch öffnen](https://www.twitch.tv/beispielcreator)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "tiktok": {
+      "label": "Profillink: TikTok",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 TikTok",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: TikTok",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 TikTok von Mittelkap",
+        "description": "**Kurze Clips und Highlights**\n\n[TikTok öffnen](https://www.tiktok.com/@beispielcreator)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "instagram": {
+      "label": "Profillink: Instagram",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 Instagram",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: Instagram",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 Instagram von Mittelkap",
+        "description": "**Bilder, Einblicke und Neuigkeiten**\n\n[Instagram öffnen](https://www.instagram.com/beispielcreator)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "twitter": {
+      "label": "Profillink: X",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 X",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: X",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 X von Mittelkap",
+        "description": "**Kurze Updates**\n\n[X öffnen](https://x.com/beispielcreator)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "facebook": {
+      "label": "Profillink: Facebook",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 Facebook",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: Facebook",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 Facebook von Mittelkap",
+        "description": "**Beiträge aus der Community**\n\n[Facebook öffnen](https://www.facebook.com/beispielcreator)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "discord": {
+      "label": "Profillink: Discord",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 Discord",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: Discord",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 Discord von Mittelkap",
+        "description": "**Dein hinterlegter Server-Einladungslink**\n\n[Discord öffnen](https://discord.com)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "playstation": {
+      "label": "Profillink: PlayStation",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 PlayStation",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: PlayStation",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 PlayStation von Mittelkap",
+        "description": "**Dein hinterlegtes Gaming-Profil**\n\n[PlayStation öffnen](https://www.playstation.com)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "xbox": {
+      "label": "Profillink: Xbox",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 Xbox",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: Xbox",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 Xbox von Mittelkap",
+        "description": "**Dein hinterlegtes Gaming-Profil**\n\n[Xbox öffnen](https://www.xbox.com)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "nintendo": {
+      "label": "Profillink: Nintendo",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 Nintendo",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: Nintendo",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 Nintendo von Mittelkap",
+        "description": "**Dein hinterlegtes Gaming-Profil**\n\n[Nintendo öffnen](https://www.nintendo.com)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "linktree": {
+      "label": "Profillink: Link-Sammlung",
+      "group": "Profillinks",
+      "template": {
+        "title": "🔗 Link-Sammlung",
+        "description": "{description}",
+        "color": "#79c6c2",
+        "author": "{bot} · Profillink: Link-Sammlung",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔗 Link-Sammlung von Mittelkap",
+        "description": "**Alle wichtigen Profile an einem Ort**\n\n[Link-Sammlung öffnen](https://wonderl.ink/@beispielcreator)",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "kick": {
+      "label": "Befehl: Kicken",
+      "group": "Moderation",
+      "template": {
+        "title": "🚪 Mitglied entfernen",
+        "description": "{description}",
+        "color": "#e47d8c",
+        "author": "{bot} · Befehl: Kicken",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🚪 Mitglied entfernen",
+        "description": "**Beispielmitglied** wurde vom Server entfernt.\n\n**Grund:** Wiederholtes Stören trotz Verwarnung.\nEine erneute Teilnahme ist mit einer gültigen Einladung möglich.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "untimeout": {
+      "label": "Befehl: Stummschaltung aufheben",
+      "group": "Moderation",
+      "template": {
+        "title": "🔊 Stummschaltung aufheben",
+        "description": "{description}",
+        "color": "#e47d8c",
+        "author": "{bot} · Befehl: Stummschaltung aufheben",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "🔊 Stummschaltung aufheben",
+        "description": "Die Stummschaltung von **Beispielmitglied** wurde aufgehoben.\n\n**Grund:** Situation gemeinsam geklärt.\nDas Mitglied kann wieder schreiben und sprechen.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    },
+    "reinvite": {
+      "label": "Befehl: Einladung",
+      "group": "Moderation",
+      "template": {
+        "title": "✉️ Neue Einladung",
+        "description": "{description}",
+        "color": "#e47d8c",
+        "author": "{bot} · Befehl: Einladung",
+        "footer": "{bot} • {server}",
+        "image_url": "",
+        "thumbnail_url": "",
+        "fields": [],
+        "section_divider": false,
+        "use_default_banner": false
+      },
+      "sample": {
+        "title": "✉️ Neue Einladung",
+        "description": "Eine neue Servereinladung wurde erstellt.\n\n**Gültigkeit:** 24 Stunden\n**Verwendungen:** einmal\n\nDie echte Antwort enthält den erzeugten Discord-Einladungslink.",
+        "fields": [],
+        "avatar": true,
+        "image": null
+      }
+    }
+  },
+  "placeholders": {
+    "name": "Anzeigename des betroffenen Mitglieds.",
+    "server": "Name des Discord-Servers.",
+    "bot": "Name des sendenden Bots.",
+    "member_count": "Aktuelle Mitgliederzahl des Servers.",
+    "date": "Datum der Nachricht.",
+    "title": "Aktuelle Überschrift des Befehls oder Ereignisses.",
+    "description": "Echte Antwort oder Ereignisdetails, zum Beispiel Grund, Kanal und Änderungen.",
+    "user_id": "Discord-ID des betroffenen Mitglieds."
+  }
+}

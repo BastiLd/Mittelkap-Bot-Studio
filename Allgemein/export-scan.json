@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "files_checked": 140,
+  "private_files_read": false,
+  "scope": "Allowlist; bereinigte Konfiguration; Pfad- und Textmusterprüfung. Kein Vergleich mit privaten Zugangsdaten.",
+  "blocked_paths": [],
+  "potential_secrets": [],
+  "other_snowflake_locations": [],
+  "preserved_owner_id_locations": [
+    {
+      "path": "Allgemein/STUDIO_V4.md",
+      "line": 45
+    },
+    {
+      "path": "Allgemein/export_repository.py",
+      "line": 20
+    },
+    {
+      "path": "Allgemein/export_repository.py",
+      "line": 66
+    },
+    {
+      "path": "Jarvis/botapp/control_bus.py",
+      "line": 13
+    },
+    {
+      "path": "Jarvis/botapp/moderation.py",
+      "line": 16
+    },
+    {
+      "path": "Jarvis/botapp/settings_schema.py",
+      "line": 7
+    },
+    {
+      "path": "README.md",
+      "line": 35
+    },
+    {
+      "path": "Ultron/botapp/control_bus.py",
+      "line": 13
+    },
+    {
+      "path": "Ultron/botapp/moderation.py",
+      "line": 16
+    },
+    {
+      "path": "Ultron/botapp/settings_schema.py",
+      "line": 7
+    },
+    {
+      "path": "Webseite/server.py",
+      "line": 239
+    },
+    {
+      "path": "Webseite/static/app.js",
+      "line": 130
+    }
+  ]
+}
