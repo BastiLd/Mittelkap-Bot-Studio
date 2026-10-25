@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "files_checked": 140,
+  "files_checked": 141,
   "private_files_read": false,
   "scope": "Allowlist; bereinigte Konfiguration; Pfad- und Textmusterprüfung. Kein Vergleich mit privaten Zugangsdaten.",
   "blocked_paths": [],
@@ -13,11 +13,11 @@
     },
     {
       "path": "Allgemein/export_repository.py",
-      "line": 20
+      "line": 21
     },
     {
       "path": "Allgemein/export_repository.py",
-      "line": 66
+      "line": 67
     },
     {
       "path": "Jarvis/botapp/control_bus.py",

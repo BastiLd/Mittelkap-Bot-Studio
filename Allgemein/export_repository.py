@@ -12,10 +12,11 @@ from build_packages import FONT_FILES, packlists
 
 ROOT = Path(__file__).resolve().parent.parent
 AREAS = {"Jarvis", "Ultron", "Webseite", "Allgemein"}
-ROOT_FILES = {"README.md", ".gitignore", "start.py", "requirements.txt"}
+ROOT_FILES = {"README.md", ".gitignore", ".gitattributes", "start.py", "requirements.txt"}
 MANIFEST = "Allgemein/export-manifest.json"
 REPORT = "Allgemein/export-scan.json"
-TEXT_TYPES = {".py", ".js", ".json", ".html", ".css", ".md", ".txt", ".example"}
+TEXT_TYPES = {".py", ".js", ".json", ".html", ".css", ".svg", ".md", ".txt", ".example"}
+TEXT_NAMES = {".gitignore", ".gitattributes"}
 # This is the existing, explicitly requested protection identity, not a credential.
 PROTECTED_ID = "965593518745731152"
 TOKEN_PATTERNS = {
@@ -84,7 +85,7 @@ Dieser Bereich enthält gemeinsame Start-/Paketwerkzeuge und öffentliche Anleit
 - `STUDIO_V4.md`: Funktions- und Bedienübersicht ohne private Bereitstellungsdaten.
 - `build_packages.py`: explizite Paket-Packliste; `python Allgemein/build_packages.py --output-dir <privater-ausgabeordner>` erzeugt Codepakete.
 - `export_repository.py`: erzeugt aus dem Quellprojekt einen neuen bereinigten Unterordner `Repository`; vorhandene unbekannte Dateien führen zum Abbruch. Quellkonfigurationen werden nicht verändert. Der Export liest keine privaten Dateien und führt keine Veröffentlichung aus.
-- `export-manifest.json`: Dateipfade und SHA-256-Prüfsummen des Quellcode-Exports.
+- `export-manifest.json`: Dateipfade und SHA-256-Prüfsummen des Quellcode-Exports. UTF-8-Text wird vor der Berechnung auf LF-Zeilenenden normalisiert; `.gitattributes` erhält diese Form auch beim Git-Checkout. Binärdateien bleiben unverändert.
 - `export-scan.json`: Prüfbericht ohne gefundene Geheimniswerte; die bewusst erhaltene Schutz-ID wird nur über ihre Fundstellen dokumentiert.
 
 Die gebündelten Schriften liegen in beiden Botordnern mit ihren vollständigen SIL-OFL-Lizenzen und Quellenangaben. Die Website benutzt das gleiche Kartenmodul wie Jarvis. Kein Test, Start oder Export löst automatisch eine Moderation oder Privatnachricht aus.
@@ -144,6 +145,43 @@ Repository/
 .DS_Store
 Thumbs.db
 """
+
+GIT_ATTRIBUTES = """# The export manifest hashes canonical UTF-8/LF text and unchanged binaries.
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.svg text eol=lf
+*.txt text eol=lf
+*.env.example text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.webp -text
+*.gif -text
+*.ico -text
+*.ttf -text
+*.otf -text
+*.woff -text
+*.woff2 -text
+"""
+
+
+def is_text_file(name):
+    path = Path(name)
+    return path.suffix.lower() in TEXT_TYPES or path.name in TEXT_NAMES
+
+
+def normalize_file(name, content):
+    """Hash exactly the bytes Git will keep: BOM-free UTF-8/LF, binaries untouched."""
+    if not is_text_file(name):
+        return content
+    return content.decode("utf-8-sig").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
 
 
 def json_bytes(value):
@@ -231,7 +269,7 @@ def public_plan(root=ROOT):
         if not path.is_file() or path.is_symlink():
             raise ValueError("Exportwerkzeug fehlt oder ist verlinkt: " + leaf)
         plan["Allgemein/" + leaf] = path.read_bytes()
-    plan.update({"README.md": PUBLIC_README.encode(), ".gitignore": GITIGNORE.encode(),
+    plan.update({"README.md": PUBLIC_README.encode(), ".gitignore": GITIGNORE.encode(), ".gitattributes": GIT_ATTRIBUTES.encode(),
                  "Allgemein/README.md": GENERAL_README.encode(),
                  "Allgemein/Manager.env.example": ENV_EXAMPLE.encode(),
                  "Allgemein/STUDIO_V4.md": public_v4(root)})
@@ -262,7 +300,7 @@ def scan(plan):
         leaf = Path(name).name.lower()
         if Path(name).suffix.lower() in {".db", ".sqlite", ".sqlite3", ".log", ".zip", ".env"} or leaf in {".env", "config.local.json"} or (leaf.startswith(".env.") and not leaf.endswith(".example")):
             blocked.append(name)
-        if Path(name).suffix.lower() not in TEXT_TYPES:
+        if not is_text_file(name):
             continue
         text = content.decode("utf-8")
         for number, line in enumerate(text.splitlines(), 1):
@@ -290,7 +328,7 @@ def export(output=None, root=ROOT):
     # Only a direct child of this exact source workspace may be updated.
     if output.parent != root or output.name != "Repository":
         raise ValueError("Exportziel muss der direkte Unterordner Repository im Quellprojekt sein.")
-    plan = dict(public_plan(root))
+    plan = {name: normalize_file(name, content) for name, content in public_plan(root).items()}
     report = scan(plan)
     if report["blocked_paths"] or report["potential_secrets"] or report["other_snowflake_locations"]:
         # Diagnostic content contains paths/check names/line numbers, never matching secrets.

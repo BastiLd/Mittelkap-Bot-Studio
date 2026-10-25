@@ -1,0 +1,23 @@
+# The export manifest hashes canonical UTF-8/LF text and unchanged binaries.
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.svg text eol=lf
+*.txt text eol=lf
+*.env.example text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.webp -text
+*.gif -text
+*.ico -text
+*.ttf -text
+*.otf -text
+*.woff -text
+*.woff2 -text
