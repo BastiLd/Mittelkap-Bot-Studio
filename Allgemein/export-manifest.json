@@ -10,7 +10,7 @@
     "Allgemein/export-scan.json": "9331fbd68db2e42d42267e4149020c72c8880ce785b4ba0637f9c6e60885c002",
     "Allgemein/export_repository.py": "e0684d341c1c29da37f37bf5c3f19ab1a21a29c018bf0dd3368b485e2e122f87",
     "Allgemein/requirements.txt": "0d4e955c44b96722dd94b5758a6caca9bfac286cc625cd0ce805a339a06f88f5",
-    "Allgemein/start.py": "1870feddc6e3679a76e10818330d129f6756e6308b4ddad657b7fc725e5b83d2",
+    "Allgemein/start.py": "1b4f7cc73d7610cd598a1a5dc8d49a3c231ef77cc94bf7bc3f13bd9de664f6d9",
     "Jarvis/README.md": "da3cb13c2a0213bec1e7d7721ab79e08aed14431379353d9e8afc47173b2b2ec",
     "Jarvis/assets/banners/birthday.png": "f81580cc6f6ecb78b97f65325e522107d93b0eff71358c7f5ce9493bd946dcce",
     "Jarvis/assets/banners/farewell.png": "99baa7ffa3096d6a8350ced9bcb5f0ad6599a9ff927f11af116769efcb429814",
@@ -142,6 +142,6 @@
     "Webseite/static/studio.js": "b8b40fe1d371e176636ec792eab1be8c447df15e41e6ab8379922d67d178d5c6",
     "Webseite/static/style.css": "fae4681a72aeb4188f65cd5568e63a6e7f2c480009fa839b47271ce652058d63",
     "requirements.txt": "0d4e955c44b96722dd94b5758a6caca9bfac286cc625cd0ce805a339a06f88f5",
-    "start.py": "1870feddc6e3679a76e10818330d129f6756e6308b4ddad657b7fc725e5b83d2"
+    "start.py": "1b4f7cc73d7610cd598a1a5dc8d49a3c231ef77cc94bf7bc3f13bd9de664f6d9"
   }
 }
