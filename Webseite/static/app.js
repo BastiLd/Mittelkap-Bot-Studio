@@ -80,7 +80,7 @@ function render(){
  $$('[data-bot]').forEach(b=>b.classList.toggle('selected',b.dataset.bot===bot));
  const guilds=[...new Map(data.bots.flatMap(b=>b.guilds||[]).map(g=>[String(g.id),g])).values()];
  $('#guild-select').innerHTML=guilds.map(g=>`<option value="${esc(g.id)}" ${String(g.id)===guildId?'selected':''}>${esc(g.name)}</option>`).join('')||'<option>Kein Server verbunden</option>';
- if(!guild()&&!['overview','access'].includes(page)){$('#content').innerHTML=empty('Der Bot ist noch nicht verbunden.','Starte die Bots mit START_ALLE.cmd. Auf deinem Server verwendest du die mitgelieferte Compose-Konfiguration.');return;}
+ if(!guild()&&!['overview','access'].includes(page)){$('#content').innerHTML=empty('Der Bot ist noch nicht verbunden.','Starte auf deinem Server die Profile Jarvis und Ultron im Bot-Manager. Am Windows-PC verwendest du START_ALLE.cmd.');return;}
  const result=({overview:overviewV3,channels:channels,sources:sources,commands:commands,embeds:()=>renderEmbedsV3(settings()),settings:configuration,logs:logs,members:communityMembers,moderation:moderation,access:renderAccessV3})[page]();
  Promise.resolve(result).then(()=>decoratePage()).catch(e=>toast(e.message,true));
 }
