@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "files_checked": 197,
+  "files_checked": 209,
   "private_files_read": false,
   "scope": "Allowlist; bereinigte Konfiguration; Pfad- und Textmusterprüfung. Kein Vergleich mit privaten Zugangsdaten.",
   "blocked_paths": [],

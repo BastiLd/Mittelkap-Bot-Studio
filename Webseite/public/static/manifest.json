@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "Mittelkap Bot-Studio",
+  "short_name": "Mittelkap",
+  "lang": "de",
+  "start_url": "/#overview",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#202724",
+  "theme_color": "#263c3d",
+  "description": "Deine Zentrale für Jarvis, Ultron und deinen Discord-Server.",
+  "icons": [
+    {
+      "src": "/static/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
