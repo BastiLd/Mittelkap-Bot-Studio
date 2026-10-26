@@ -1,7 +1,8 @@
 (function(){
 'use strict';
-const sidebar=document.querySelector('.sidebar'),bar=document.querySelector('.topbar'),small=matchMedia('(max-width:800px)');
-const toggle=document.createElement('button');toggle.type='button';toggle.className='mobile-menu quiet';toggle.textContent='☰ Menü';toggle.setAttribute('aria-label','Navigation öffnen');toggle.setAttribute('aria-expanded','false');sidebar.id='mobile-navigation';toggle.setAttribute('aria-controls',sidebar.id);bar.prepend(toggle);
+const sidebar=document.querySelector('.sidebar'),small=matchMedia('(max-width:800px)');
+const dock=document.createElement('div');dock.className='mobile-bottom-bar';dock.setAttribute('role','navigation');dock.setAttribute('aria-label','Mobile Menüleiste');dock.innerHTML='<div class="mobile-bottom-brand"><img src="/static/mark.svg" alt=""><span>Mittelkap<small>BOT-STUDIO</small></span></div>';document.querySelector('#app').append(dock);
+const toggle=document.createElement('button');toggle.type='button';toggle.className='mobile-menu quiet';toggle.innerHTML='<span aria-hidden="true">☰</span> Menü';toggle.setAttribute('aria-label','Navigation öffnen');toggle.setAttribute('aria-expanded','false');sidebar.id='mobile-navigation';toggle.setAttribute('aria-controls',sidebar.id);dock.append(toggle);
 const close=document.createElement('button');close.type='button';close.className='mobile-close quiet';close.textContent='×';close.setAttribute('aria-label','Navigation schließen');sidebar.prepend(close);
 const backdrop=document.createElement('button');backdrop.type='button';backdrop.className='mobile-backdrop';backdrop.setAttribute('aria-label','Navigation schließen');backdrop.tabIndex=-1;document.body.append(backdrop);
 function setOpen(open){document.body.classList.toggle('mobile-nav-open',open&&small.matches);toggle.setAttribute('aria-expanded',String(open&&small.matches));sidebar.inert=small.matches&&!open;if(open&&small.matches)close.focus();else if(small.matches)toggle.focus();}
